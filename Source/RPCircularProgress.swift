@@ -444,7 +444,7 @@ extension RPCircularProgress: CAAnimationDelegate {
   
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
     let completedValue = anim.value(forKey: AnimationKeys.toValue)
-    if let completedValue = completedValue as? CGFloat {
+    if let completedValue = completedValue as? CGFloat, flag {
       progressLayer.progress = completedValue
     }
     
